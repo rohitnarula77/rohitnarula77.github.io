@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<title>Project 4 - FreedomCorp Dashboard</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>      
+		</div>
+	</nav>
+
+	<!-- Bootstrap grid setup -->
+	<div class="container">
+		<h3>Freedom Corp sales team performance across regions over time based on a variety of different metrics</h3>
+		<h4> Visualization is based on data showing all of Freedom Corp sales from January, 2017 - December, 2017</h4> 
+		<div class="row">
+			<div id="left-charts" class="col-sm-12 col-md-8">
+				<div class="row">
+					<div class="col-md-6">
+						<label>Dates: <span id="dateLabel1">01/01/2017</span> - <span id="dateLabel2">10/12/2017</span></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<select id="var-select" class="form-control">
+							<option selected value="call_revenue">Revenue (USD)</option>
+							<option value="call_duration">Call Time (seconds)</option>
+							<option value="units_sold">Units Sold</option>
+						</select>
+					</div>                          
+				</div>
+				<div id="stacked-area"></div>
+				<div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
+				<div id="timeline"></div>
+			</div>
+			<div id="right-charts" class="col-md-4 col-sm-12">
+				<div class="row">
+					<div class="col-sm-6 col-md-12" id="company-size"></div>
+					<div class="col-sm-6 col-md-12" id="units-sold"></div>                    
+					<div class="col-sm-6 col-md-12" id="revenue"></div>
+					<div class="col-sm-6 col-md-12" id="call-duration"></div>                    
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- External JS libraries -->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+	<script src="js/stackedAreaChart.js"></script>
+	<script src="js/timeline.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
